@@ -1,13 +1,13 @@
-<h1>Entries</h1>
+
 
 <div class="row">
-  <div class="card">
-    <div class="card-body">
-    <% if @entries.any? %>
-      <%= render (@entries) %>
-    <% else %>
-      <p>No entries found. <%= link_to('Create one', new_entry_path) %></p>
-    <% end %>
+  <div class="card shadow-sm" id="dashboard">
+    <div class="entries-card">
+    <div class="entries-card__sidebar">
+      <%= render(@entries) %>
+    </div>
+    <div class="entries-sidebar__main"></div>
+    <%= @entries.first.name %>
     </div>
   </div>
 </div>
