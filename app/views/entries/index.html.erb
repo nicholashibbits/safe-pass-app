@@ -7,7 +7,7 @@
       <%= render(@entries) %>
     </div>
     <div class="entries-sidebar__main"></div>
-    <%= @entries.first.name %>
+      <%= render(partial: 'entries/main', locals: { entry: @main_entry }) %>
     </div>
   </div>
 </div>
