@@ -1,11 +1,16 @@
 <div class="row">
-  <div class="card shadow-sm" id="dashboard">
+  <div id="dashboard" class="card shadow-sm">
     <div class="entries-card">
-    <div class="entries-card__sidebar">
-      <%= render(@entries) %>
-    </div>
-    <div class="entries-sidebar__main"></div>
-      <%= render(partial: 'entries/main', locals: { entry: @main_entry }) %>
+      <div class="entries-card__sidebar">
+        <nav class="nav flex-column">
+          <%= render(@entries) %>
+        </nav>
+      </div>
+      <div class="entries-card__main">
+        <%= turbo_frame_tag('main-dashboard') do %>
+          <%= render(partial: 'entries/main', locals: {entry: @main_entry}) %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

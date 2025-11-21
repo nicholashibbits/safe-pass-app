@@ -1,6 +1,3 @@
-<h1><%= @entry.name %></h1>
-<div>
-  <p><%= @entry.url %></p>
-  <p><%= @entry.username %></p>
-  <p><%= @entry.password %></p>
-</div>
+<%= turbo_frame_tag('main-dashboard') do %>
+  <%= render(partial: 'entries/main', locals: {entry: @entry}) %>
+<% end %>
