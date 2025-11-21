@@ -11,22 +11,23 @@ class EntriesController < ApplicationController
   end
 
   def new
-    @entry = Entry.new
-  end 
+   @entry = Entry.new
+  end
 
-  def create 
+  def create
     @entry = current_user.entries.new(entry_params)
     if @entry.save
-      flash[:notice] = 'Entry saved'
+      flash[:notice] = "Entry saved"
       redirect_to root_path
     else
-      flash[:alert] = 'Sorry, there was an issue'
+      flash[:alert] = "Sorry, there was an issue"
       render :new, status: :unprocessable_entity
     end
   end
 
   private
-  def entry_params
-    params.expect(entry: [:name, :url, :username, :password])
-  end
+
+    def entry_params
+      params.expect(entry: [ :name, :url, :username, :password ])
+    end
 end
