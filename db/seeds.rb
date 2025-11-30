@@ -7,3 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Entry.create(name: "Google", url: "https://www.google.com", username: "test@example.com", password: "password", user_id: 6)
+Entry.create(name: "Facebook", url: "https://www.facebook.com", username: "test@example.com", password: "password", user_id: 6)
+Entry.create(name: "Twitter", url: "https://www.twitter.com", username: "test@example.com", password: "password", user_id: 6)
