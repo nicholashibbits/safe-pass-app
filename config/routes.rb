@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users, path: "secure"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get "/home", to: "pages#home"
   get "/about", to: "pages#about"
   get "up" => "rails/health#show", as: :rails_health_check
+
+  namespace :api do
+    namespace :v1 do
+      post :auth, to: "auth#create"
+      resources :entries
+    end
+  end
 
   resources :entries
 
